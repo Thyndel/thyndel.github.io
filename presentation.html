@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine 💖</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="box">
+    <h1 id="slide">You chose love 💕</h1>
+    <button class="yes" onclick="next()">Next ➡️</button>
+</div>
+
+<script>
+      const slides = [
+        "You chose love 💕",
+        "You chose us 💖",
+        "You chose forever 🌹",
+        "Happy Valentine’s Day my love ❤️"
+    ];
+
+    let i = 0;
+
+    function next() {
+        i++;
+
+        const slide = document.getElementById("slide");
+        const btn = document.querySelector("button");
+
+        if (i < slides.length) {
+            slide.style.opacity = 0;
+
+            setTimeout(() => {
+                slide.innerText = slides[i];
+                slide.style.opacity = 1;
+
+                // If last slide, hide the button
+                if (i === slides.length - 1) {
+                    btn.style.display = "none";
+                }
+            }, 400);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Valentine Box */
+.box {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    animation: pop 1s ease;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 26px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.yes {
+    background: green;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+.no {
+    background: red;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Floating hearts */
+.hearts::before {
+    content: "💖 💕 💘 💗";
+    position: absolute;
+    font-size: 40px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { bottom: -10%; left: 20%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 110%; left: 80%; opacity: 0; }
+}
+ /* Fireworks */
+.firework {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+        0 0 red,
+        20px 0 gold,
+        -20px 0 hotpink,
+        0 20px cyan,
+        0 -20px lime;
+    animation: explode 1s ease-out infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
